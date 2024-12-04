@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Profile Page</title>
+  <link rel="stylesheet" href="styles3.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="profile-header">
+      <img src="https://alokrajcse.github.io/Alok/alokraj.jpeg" alt="Profile Picture" class="profile-pic">
+      <div>
+        <h1>Alok Raj Mahto</h1>
+        <p>Computer Science Student | Android Developer </p>
+        <p><strong>Joined:</strong> July 15, 2022</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section class="about">
+      <h2>About Me</h2>
+      <p>A 3rd-year Computer Science student and a passionate Android developer with experience in Firebase, Jetpack Compose, and app development. I enjoy building user-centric applications that solve real-world problems.</p>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume">
+      <h2>Resume</h2>
+      <a href="resume.pdf" download class="btn">Download My Resume</a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stat-card">
+        <h3>Total Earned</h3>
+        <p>$15,000</p>
+      </div>
+      <div class="stat-card">
+        <h3>Courses Completed</h3>
+        <p>12</p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-cards">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/128/4187/4187272.png" alt="OrbitX Project">
+          <h3>OrbitX</h3>
+          <p>A social media app with Firebase backend and Jetpack Compose.</p>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th?id=OIP.eXwQFRdjhp0o7-B3y8XjFwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="College App Project">
+          <h3>College App</h3>
+          <p>Used by over 2000 students, providing notes and resources.</p>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th?id=OIP.h1Rch1G9M7qenMCe1tHsqAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Weather App Project">
+          <h3>Weather App</h3>
+          <p>Real-time weather data using Jetpack Compose.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="analytics">
+      <h2>Analytics</h2>
+      <div class="charts">
+        <div>
+          <h3>Learning Analytics</h3>
+          <canvas id="learningChart"></canvas>
+        </div>
+        <div>
+          <h3>Project Contributions</h3>
+          <canvas id="projectsChart"></canvas>
+        </div>
+        <div>
+          <h3>Earnings Overview</h3>
+          <canvas id="earningsChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <script>
+    // Learning Progress Chart
+    const learningCtx = document.getElementById('learningChart').getContext('2d');
+    new Chart(learningCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Java', 'Kotlin', 'Firebase', 'DSA', 'Jetpack Compose'],
+        datasets: [{
+          label: 'Learning Progress (%)',
+          data: [80, 75, 70, 65, 85],
+          backgroundColor: [
+            '#4CAF50', '#FFC107', '#2196F3', '#FF5722', '#673AB7'
+          ],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+          }
+        },
+      }
+    });
+
+    // Project Contributions Chart
+    const projectsCtx = document.getElementById('projectsChart').getContext('2d');
+    new Chart(projectsCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['OrbitX', 'College App', 'Weather App'],
+        datasets: [{
+          label: 'Project Contributions',
+          data: [40, 30, 30],
+          backgroundColor: ['#4CAF50', '#FFC107', '#2196F3'],
+        }]
+      },
+      options: {
+        responsive: true,
+      }
+    });
+
+    // Earnings Chart
+    const earningsCtx = document.getElementById('earningsChart').getContext('2d');
+    new Chart(earningsCtx, {
+      type: 'line',
+      data: {
+        labels: ['2021', '2022', '2023', '2024'],
+        datasets: [{
+          label: 'Earnings in $',
+          data: [3000, 4000, 5000, 3000],
+          borderColor: '#4CAF50',
+          fill: false,
+          tension: 0.4,
+        }]
+      },
+      options: {
+        responsive: true,
+      }
+    });
+  </script>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Me</h3>
+        <p>Let's connect and collaborate!</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#resume">Resume</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Me</h3>
+        <p><strong>Email:</strong> <a href="mailto:alok.raj0123@gmail.com">alok.raj0123@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+917735698664">+91 7735698664</a></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" class="social-link" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="30">
+            </a>
+            <a href="https://www.linkedin.com" class="social-link" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" width="30">
+            </a>
+            <a href="https://github.com" class="social-link" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="30">
+            </a>
+          </div>
+          
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Alok Raj Mahto | All Rights Reserved</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
